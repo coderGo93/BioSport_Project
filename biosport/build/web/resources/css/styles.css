@@ -1,0 +1,436 @@
+.search-gral{
+    margin-top: -6px;
+}
+.container-menu{
+    position: fixed;
+    /*    background: #9e9e9e;*/
+    background: #66a3ce;
+    height: 100%;
+    z-index: 1;
+    margin-top: -0.4%;
+    padding-top: 20px;
+}
+.navbar-toggle.navbar-left {
+    float: left;
+    margin-left: 10px;
+}
+.container-agenda{
+    background-color: white;
+    margin-top: 4%;
+}
+
+
+.circle-default:hover{
+    cursor: pointer;
+    opacity : 0.57;
+}
+
+.date-terapista{
+    background-color: green;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    min-width: 250px;
+    max-width: 960px;
+    margin-left: 2%;
+}
+.date-terapista:hover{
+    cursor: pointer;
+    background-color: #03b503;
+}
+.date-doctor{
+
+    background-color: #286090;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: relative;
+    min-width: 250px;
+    max-width: 960px;
+    margin-left: 2%;
+}
+.date-doctor:hover{
+    cursor: pointer;
+    background-color: #2e7abb;
+}
+.dates-doctor{
+    border: solid;
+    border-width: 1px 0;
+    background-color: #286090;
+    color:white;
+}
+.dates-doctor:hover{
+    cursor: pointer;
+    background-color: #2e7abb;
+}
+.dates-terapista{
+    border: solid;
+    border-width: 1px 0;
+    background-color: green;
+    color:white;
+}
+.dates-terapista:hover{
+    cursor: pointer;
+    background-color: #03b503;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tr.principal { 
+    border: solid;
+    border-width: 1px 0;
+
+}
+tr.principal:hover { 
+    cursor: pointer;
+    background-color: #8c8c8c;
+
+}
+tr.principal2 { 
+    border: solid;
+    border-width: 1px 0;
+
+}
+tr.principal2:hover { 
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+.date-session{
+    margin-left: 30%;
+    color: white;
+}
+
+.algo{
+    border-spacing: 10px;
+}
+
+.img-plus{
+    width: 29px;
+    margin-top:1%;
+}
+.img-plus:hover{
+    cursor:pointer;
+}
+.form-add-date{
+    background: #b3b3b3;
+    padding-top: 2%;
+    display: block;
+}
+.navbar-toggle{
+    margin-top: 17px;
+    margin-left: 2%;
+}
+
+.glyphicon{
+    top:8px;
+}
+.container-user{
+    padding-left: 6%;
+    width : 95.6%;
+}
+.container-user:hover{
+    cursor: pointer;
+    color:white;
+}
+
+.container-log{
+    margin-top: 22%;
+    padding-left: 26%;
+}
+.container-editPass{
+    margin-top: 22%;
+    padding-left: 26%;
+}
+.container-editPass:hover{
+    color:white;
+    cursor:pointer;
+}
+.col-xs-offset-1 {
+    padding: 5px;
+}
+.pDates:hover{
+    color:red;
+    cursor: pointer;
+}
+.pPatients:hover{
+    color:red;
+    cursor: pointer;
+}
+
+.bLogout:hover{
+    cursor: pointer;
+    color:white;
+}
+circle:hover{
+    fill:#565555;
+}
+#bAddDate{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+#bAddDate:hover{
+    background-color: #53c757;
+    cursor: pointer;
+}
+
+.container-results{
+    margin-top: 8%;
+    display: none;
+}
+.td-right{
+    float:right;
+}
+.td-results{
+    padding: 8px;
+}
+.list-results{
+    background: #f1f1f1;
+}
+.tr-results:hover{
+    background-color: #e2e2e2;
+    cursor: pointer;
+}
+.info-table-session{
+    border-collapse: separate;
+
+}
+.td-info-date, .td-info-time-date, .td-number-session, .td-info-treatment, .td-info-bEdit{
+    padding-left: 40px;
+}
+.info-bEdit, .info-bAccept{
+    margin-top: 2%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.info-bEdit:hover, .info-bAccept:hover{
+    background-color: #5ac75f;
+
+}
+.info-bAccept{
+    display: none;
+}
+.info-bCancel{
+    margin-top: 2%;
+    background-color: #e65361;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+    display:none;
+    margin-left: 1%;
+}
+.info-bCancel:hover{
+    cursor:pointer;
+    background: #ef5261
+
+}
+.bPatient{
+    background: #d0caca;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    border-radius: 4px;
+}
+.bPatient:hover{
+    cursor:pointer;
+    background-color: #d6d1d1;
+}
+.cMultiple{
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+.cMultiple:hover{
+    cursor: pointer;
+}
+#bShowDates{
+    margin-left: 40%;
+    margin-bottom: 2%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+#bShowDates:hover{
+    background-color: #5ac75f;
+}
+.loadMore{
+    margin-top: 2%;
+    background: #b9b2b2;
+    width: 100%;
+    border-radius: 9px;   
+}
+.loadMore:hover{
+    cursor: pointer;
+    background: #c5bebe;
+}
+.loadMoreWhite{
+    margin-top: 2%;
+    background: white;
+    width: 100%;
+    border-radius: 9px;   
+}
+.info-bHTreatment{
+    margin-top: 2%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.info-bHTreatment:hover{
+    background-color: #5ac75f;
+}
+.info-bSessions{
+    margin-top: 2%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.info-bSessions:hover{
+    background-color: #5ac75f;
+}
+.table-password{
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.bUpdatePass{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+}
+.bUpdatePass:hover{
+    background-color: #5ac75f;
+}
+.bAddUser{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+}
+.bAddUser:hover{
+    background-color: #5ac75f;
+}
+
+.search-patients{
+    margin-left: 21%;
+    margin-bottom: 2%;
+}
+#search-patient{
+    width:100%;
+    margin-bottom: 2%;
+}
+.container-navbar{
+    background-color: #41b0ff;
+}
+#search-patients{
+    width:100%;
+}
+.container-pestaña-general{
+    display:none;
+}
+.select-treatment{
+    width: 100%;
+}
+
+.ringLoader{
+    width:45px;
+}
+.existUser{
+    background: #ec4d4d;
+    border-radius: 4px;
+    color:white;
+    margin-top: 5px;
+}
+.matchPassword{
+    background: #ec4d4d;
+    border-radius: 4px;
+    color:white;
+    margin-top: 5px;
+}
+.inputPassword{
+    width: 100%;
+}
+.notification{
+    width: 100%;
+    position:fixed;
+    z-index: 2;
+    background: #e85151;
+    border-radius: 3px;
+    color:white;
+    display:none;
+}
+
+.table-assist{
+    margin-top: 10%;
+}
+.glyphicon-remove,.glyphicon-ok{
+    font-size:54px;
+}
+.glyphicon-remove:hover{
+    cursor:pointer;
+    color: #f13f3f;
+}
+.glyphicon-ok:hover{
+    cursor:pointer;
+    color:#3fd03f;
+}
+
+.fondos-tipos{
+    margin-bottom: 4%;
+}
+.fondo-terapista{
+    float:left;
+    background:#2db92d;
+    padding: 8px;
+    color:white;
+    border-style: solid;
+    border-color: #6b4e4e;
+}
+.fondo-terapista:hover{
+    cursor:pointer;
+    background:#38d238;
+}
+.fondo-medicina{
+    float:right;
+    background:#1f92f5;
+    padding: 8px;
+    color:white;
+    border-style: none;
+    border-color: #6b4e4e;
+}
+.fondo-medicina:hover{
+    cursor:pointer;
+    background:#4dadff;
+    
+}

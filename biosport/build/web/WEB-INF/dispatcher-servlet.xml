@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd 
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+http://www.springframework.org/schema/cache
+ http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/views/"
+          p:suffix=".jsp" />
+    
+    <context:component-scan base-package="controller" />
+    <context:component-scan base-package="model" />
+    <context:component-scan base-package="dao" />
+    
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://biosport.cifkt3zs65yg.us-east-1.rds.amazonaws.com:3306/biosport_db"/>
+        <property name="username" value="biosport"/>
+        <property name="password" value="biosport35NoteMed"/>
+    </bean>
+    
+    
+    <!-- Hibernate 4 SessionFactory Bean definition -->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+    </bean>
+    <tx:annotation-driven />
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="usuarioDAO" class="dao.UsuarioDAOImpl">
+        <constructor-arg>
+            <ref bean="sessionFactory" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="citaDAO" class="dao.CitaDAOImpl">
+        <constructor-arg>
+            <ref bean="sessionFactory" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="fechaDAO" class="dao.FechaDAOImpl">
+        <constructor-arg>
+            <ref bean="sessionFactory" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="pacienteDAO" class="dao.PacienteDAOImpl">
+        <constructor-arg>
+            <ref bean="sessionFactory" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="tratamientoDAO" class="dao.TratamientoDAOImpl">
+        <constructor-arg>
+            <ref bean="sessionFactory" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+    <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+    <mvc:annotation-driven  content-negotiation-manager="contentNegotiationManager" />
+
+<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+     <property name="favorPathExtension" value="false" />
+     <property name="favorParameter" value="true" />
+     <property name="mediaTypes" >
+          <value>
+               json=application/json
+               xml=application/xml
+          </value>
+     </property>
+</bean>
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jacksonMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+    <!-- Nunca borrar eso, sirve para los mappings -->
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+    <!-- Nunca borrar eso -->
+</beans>

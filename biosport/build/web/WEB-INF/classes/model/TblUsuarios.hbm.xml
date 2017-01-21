@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 3, 2016 6:35:21 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TblUsuarios" table="TBL_Usuarios" catalog="biosport_db">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="250" />
+        </property>
+        <property name="deleted" type="java.lang.Integer">
+            <column name="deleted" />
+        </property>
+        <property name="tipo" type="java.lang.Integer">
+            <column name="tipo" />
+        </property>
+    </class>
+</hibernate-mapping>
